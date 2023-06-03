@@ -1,12 +1,15 @@
-fetch('https://api.github.com/users/0gabrielmarques0/repos')
+function teste() {
+    console.log("funciona")
+}
+
+fetch('https://api.github.com/users/0gabrielmarques0')
 .then( res =>  res.json())
 .then( res => {
-    res.forEach(repo => {
-        const li = document.createElement('li')
-        const name = document.createTextNode(repo.name)
-        li.appendChild(name)
-        const lista = document.querySelector(".lista")
-        lista.appendChild(li)
-    });
-    
+        const img = document.createElement('img')
+        img.setAttribute("src", res.avatar_url)
+        img.style.width = "100px"
+        img.style.height = "100px"
+        const userPic = document.querySelector(".user-pic")
+        userPic.appendChild(img)    
+
 })
