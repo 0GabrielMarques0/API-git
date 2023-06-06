@@ -40,17 +40,19 @@ button {
     border-end-end-radius: 6px;
 }
 
-.icone {
+.icon {
     width: 37px;
     height:  37px;
 }
 
 article {
+    display: none;
     width: 400px;
-    height: 600px;
+    height: 300px;
     border: 2px solid white;
     border-radius: 5px;
     padding: 10px;
+    margin-left: 100px;
 }
 
 .user-pic {
