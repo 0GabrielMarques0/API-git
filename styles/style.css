@@ -47,18 +47,12 @@ button {
 
 article {
     display: none;
-    width: 400px;
-    height: 300px;
+    width: 300px;
+    height: fit-content;
     border: 2px solid white;
     border-radius: 5px;
     padding: 10px;
     margin-left: 100px;
-}
-
-.user-pic {
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
 }
 
 

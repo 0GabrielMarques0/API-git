@@ -16,31 +16,46 @@ buttonUser.addEventListener("click" , function () {
             link: res.html_url
        }
        users.push(user)
+       render()
     })
 })
 
 
-
-users.map( function (user){
-    
+function render(){  
+    const userList = document.querySelector(".user-list")
+    userList.innerHTML = ''
+    users.map( function (user){
+        const userInList = document.createElement("li")
+        userList.appendChild(userInList)
+        userInList.style.display = 'flex'
+        
         const img = document.createElement('img')
         img.setAttribute("src", user.imagem)
         img.style.width = "100px"
         img.style.height = "100px"
-        const userPic = document.querySelector(".user-pic")
-        userPic.appendChild(img)
+        img.style.borderRadius = "50px"
+        userInList.appendChild(img)
+        
+        const userInfo = document.createElement("div")
+        userInList.appendChild(userInfo)
+        userInfo.style.padding = '0 10px'
+        userInfo.style.height = "fit-content"
+        userInfo.style.position = "relative"
+        userInfo.style.left = "40px"
+        userInfo.style.top = "30px"
 
         const texto = document.createElement('h1')
         texto.textContent = user.nome
         texto.style.color = "white"
-        const userName = document.querySelector(".user-name")
-        userName.appendChild(texto)
+        texto.style.fontSize = "20px"
+        userInfo.appendChild(texto)
 
         const link = document.createElement('a')
         link.setAttribute("href", user.link)
         link.setAttribute("target", "_blank")
         link.textContent = "Github"
         link.style.color = "white"
-        const userLink = document.querySelector('.user-link')
-        userLink.appendChild(link)
-})
+        link.style.marginTop = "20px"
+        userInfo.appendChild(link)
+    })
+}
